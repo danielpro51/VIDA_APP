@@ -1,9 +1,12 @@
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import React from 'react';
 import {
+    Animated,
     Image,
     ScrollView,
     StyleSheet,
     Text,
+    TouchableOpacity,
     View,
 } from 'react-native';
 
@@ -13,23 +16,32 @@ import Header from '../../components/header';
 const logo = require('@/assets/images/logo.jpg');
 
 export default function Home() {
+    const fadeAnim = new Animated.Value(0);
+
+    React.useEffect(() => {
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 800,
+            useNativeDriver: true,
+        }).start();
+    });
+
     return (
         <View style={styles.container}>
             <ScrollView>
                 <Header />
-                <View style={styles.containerMain}>
+                <Animated.View style={[styles.containerMain, {opacity: fadeAnim}]}>
                     <View style={{justifyContent: 'center', alignItems: 'center' }}>
                         <Text style={styles.title}>VIDA</Text>
                         <Text style={styles.subtitle}>Laboris sunt aute mollit duis tempor sit pariatur ipsum nisi amet eu...</Text>
                     </View>
-                        <Image source={logo} style={styles.imgLogo} />
-                </View>
+                    <Image source={logo} style={styles.imgLogo} />
+                </Animated.View>
+
                 {/* Sección Características */}
-                <View style={styles.containerMid}>
+                <Animated.View style={[styles.containerMid, {opacity: fadeAnim}]}>
                     <Text style={styles.sectionTitle}>Características</Text>
-                    <View style={{        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',}}>
+                    <View style={styles.characteristicsContainer}>
                         {["Automatización", "Seguridad", "Confort", "Eficiencia Energética"].map((item, index) => (
                             <View key={index} style={styles.card}>
                                 <Text style={styles.cardTitle}>{item}</Text>
@@ -37,28 +49,29 @@ export default function Home() {
                             </View>
                         ))}
                     </View>
-                </View>
-                {/* Sección Aplicaciones Reales */}
-                <View style={[styles.containerMid]}>
-                    <Text style={styles.sectionTitle}>Aplicaciones Reales</Text>
-                    <View style={{flexDirection: 'row'}}>
-                        <View style={styles.containerApp}>
-                            <MaterialIcons name="factory" size={38} color="#ffa9ff"/>
-                            <Text>Industrias</Text>
-                        </View>
-                        <View style={styles.containerApp}>
-                            <MaterialIcons name="apartment" size={38} color="#ffa9ff"/>
-                            <Text>Empresas</Text>
-                        </View>
-                        <View style={styles.containerApp}>
-                            <MaterialIcons name="home" size={38} color="#ffa9ff"/>
-                            <Text>Hogares</Text>
-                        </View>
+                </Animated.View>
 
+                {/* Sección Aplicaciones Reales */}
+                <Animated.View style={[styles.containerMid, {opacity: fadeAnim}]}>
+                    <Text style={styles.sectionTitle}>Aplicaciones Reales</Text>
+                    <View style={styles.appContainer}>
+                        <TouchableOpacity style={styles.containerApp} activeOpacity={0.7}>
+                            <MaterialIcons name={"factory"} size={32} color="#6A0DAD"/>
+                            <Text style={styles.cardTitle}>Industria</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.containerApp} activeOpacity={0.7}>
+                            <MaterialIcons name={"apartment"} size={32} color="#6A0DAD"/>
+                            <Text style={styles.cardTitle}>Empresa</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.containerApp} activeOpacity={0.7}>
+                            <MaterialIcons name={"home"} size={32} color="#6A0DAD"/>
+                            <Text style={styles.cardTitle}>Hogar</Text>
+                        </TouchableOpacity>
                     </View>
-                </View>
+                </Animated.View>
+
                 {/* Sección Testimonios */}
-                <View style={styles.containerMid}>
+                <Animated.View style={[styles.containerMid, {opacity: fadeAnim}]}>
                     <Text style={styles.sectionTitle}>Testimonios</Text>
                     <View style={styles.testimonialsContainer}>
                         {["Juan Pérez", "María Rodríguez", "Carlos Gómez"].map((user, index) => (
@@ -68,7 +81,8 @@ export default function Home() {
                             </View>
                         ))}
                     </View>
-                </View>
+                </Animated.View>
+
                 {/* Footer */}
                 <Footer />
             </ScrollView>
@@ -82,10 +96,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     containerMain: {
-        flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
+        alignItems: 'center',
         paddingHorizontal: 16,
     },
     textContainer: {
@@ -111,6 +125,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginVertical: 20,
     },
+    characteristicsContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+    },
     card: {
         width: 240,
         padding: 16,
@@ -132,6 +151,23 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#2c2c2c',
         textAlign: 'justify',
+    },
+    appContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+    },
+    containerApp: {
+        width: 'auto',
+        alignItems: 'center',
+        padding: 12,
+        backgroundColor: '#e396ff',
+        borderRadius: 12,
+        margin: 8,
+        shadowColor: '#000',
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+        elevation: 4,
     },
     testimonialsContainer: {
         flexDirection: 'row',
@@ -163,11 +199,6 @@ const styles = StyleSheet.create({
         marginBottom: 16,
         maxWidth: 300,
         fontStyle: 'italic',
-    },
-    containerApp:{
-        flexDirection: 'column',
-        backgroundColor: '#ff0',
-
     },
 });
 
