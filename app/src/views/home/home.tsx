@@ -1,3 +1,4 @@
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import {
     Image,
     ScrollView,
@@ -6,6 +7,7 @@ import {
     View,
 } from 'react-native';
 
+import Footer from '../../components/footer';
 import Header from '../../components/header';
 
 const logo = require('@/assets/images/logo.jpg');
@@ -36,6 +38,25 @@ export default function Home() {
                         ))}
                     </View>
                 </View>
+                {/* Sección Aplicaciones Reales */}
+                <View style={[styles.containerMid]}>
+                    <Text style={styles.sectionTitle}>Aplicaciones Reales</Text>
+                    <View style={{flexDirection: 'row'}}>
+                        <View style={styles.containerApp}>
+                            <MaterialIcons name="factory" size={38} color="#ffa9ff"/>
+                            <Text>Industrias</Text>
+                        </View>
+                        <View style={styles.containerApp}>
+                            <MaterialIcons name="apartment" size={38} color="#ffa9ff"/>
+                            <Text>Empresas</Text>
+                        </View>
+                        <View style={styles.containerApp}>
+                            <MaterialIcons name="home" size={38} color="#ffa9ff"/>
+                            <Text>Hogares</Text>
+                        </View>
+
+                    </View>
+                </View>
                 {/* Sección Testimonios */}
                 <View style={styles.containerMid}>
                     <Text style={styles.sectionTitle}>Testimonios</Text>
@@ -48,12 +69,8 @@ export default function Home() {
                         ))}
                     </View>
                 </View>
-                {/* Sección de Aplicaciones Reales*/}
-
                 {/* Footer */}
-                <View style={styles.containerFooter}>
-                    <Text style={styles.footerText}>© 2025 Todos los derechos reservados</Text>
-                </View>
+                <Footer />
             </ScrollView>
         </View>
     );
@@ -67,6 +84,7 @@ const styles = StyleSheet.create({
     containerMain: {
         flex: 1,
         flexDirection: 'row',
+        flexWrap: 'wrap',
         justifyContent: 'space-around',
         paddingHorizontal: 16,
     },
@@ -146,14 +164,10 @@ const styles = StyleSheet.create({
         maxWidth: 300,
         fontStyle: 'italic',
     },
-    containerFooter:{
+    containerApp:{
+        flexDirection: 'column',
+        backgroundColor: '#ff0',
 
-    },
-    footerText: {
-        textAlign: 'center',
-        fontSize: 14,
-        color: '#4B0082',
-        marginVertical: 12,
     },
 });
 
