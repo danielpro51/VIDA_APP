@@ -1,19 +1,17 @@
 import React from 'react';
 import {
-  StyleSheet
+  StyleSheet,
+  View
 } from 'react-native';
-import Header from './src/components/header';
 import Routes from './src/components/routes';
 
 export default function Main(){
   return(
-    <>
-      <Header />
+    <View style={styles.container}>
       <Routes />
-    </>
+    </View>
   );
 }
-
 const styles = StyleSheet.create({
   container:{
     flex: 1,

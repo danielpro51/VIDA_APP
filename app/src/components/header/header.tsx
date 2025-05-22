@@ -31,11 +31,11 @@ export default function Header(){
 }
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: 'transparent',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 16,
-        // backgroundColor: '#f8f8f8',
     },
     containerLogo:{
         flexDirection: 'row',
@@ -44,9 +44,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
+        color: '#4B0082',
     },
     button: {
         fontSize: 16,
-        color: '#007bff',
+        fontWeight: 'bold',
+        color: '#2c2c2c',
     },
 });
