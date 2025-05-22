@@ -1,5 +1,5 @@
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Animated,
     Image,
@@ -7,7 +7,7 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View,
+    View
 } from 'react-native';
 
 import Footer from '../../components/footer';
@@ -16,8 +16,11 @@ import Header from '../../components/header';
 const logo = require('@/assets/images/logo.jpg');
 
 export default function Home() {
-    const fadeAnim = new Animated.Value(0);
+    const [modalIndustry, setModalIndustry] = useState(false);
+    const [modalCompany, setModalCompany] = useState(false);
+    const [modalHome, setModalHome] = useState(false);
 
+    const fadeAnim = new Animated.Value(0);
     React.useEffect(() => {
         Animated.timing(fadeAnim, {
             toValue: 1,
@@ -50,7 +53,6 @@ export default function Home() {
                         ))}
                     </View>
                 </Animated.View>
-
                 {/* Sección Aplicaciones Reales */}
                 <Animated.View style={[styles.containerMid, {opacity: fadeAnim}]}>
                     <Text style={styles.sectionTitle}>Aplicaciones Reales</Text>
