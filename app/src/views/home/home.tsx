@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {
     Animated,
     Image,
+    Modal,
     ScrollView,
     StyleSheet,
     Text,
@@ -14,6 +15,9 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 
 const logo = require('@/assets/images/logo.jpg');
+const factory = require('@/assets/images/factory.png');
+const office = require('@/assets/images/office.png');
+const home = require('@/assets/images/smartHome.png');
 
 export default function Home() {
     const [modalIndustry, setModalIndustry] = useState(false);
@@ -29,8 +33,54 @@ export default function Home() {
         }).start();
     });
 
+    function onPressFactoryModal(){
+        setModalIndustry(!modalIndustry);
+    };
+    function onPressApartmentModal(){
+        setModalCompany(!modalCompany);
+    };
+    function onPressHomeModal(){
+        setModalHome(!modalHome);
+    };
     return (
         <View style={styles.container}>
+            {/* Modal industria */}
+            <Modal visible={modalIndustry} animationType='fade' transparent={true}>
+                <View style={styles.modalContainer}>
+                    <View style={styles.modalContainerView}>
+                        <Image source={factory} style={styles.modalImg}/>
+                        <Text style={styles.modalText}>Eu commodo laboris dolor commodo ut amet sunt. Dolor anim esse irure reprehenderit. Ad dolore elit occaecat incididunt ut esse tempor veniam ea ipsum. Do culpa aliqua eu fugiat enim pariatur minim.</Text>
+                        <TouchableOpacity style={styles.modalContainerClose} onPress={() => {
+                            setModalIndustry(!modalIndustry)
+                        }}><Text>X</Text></TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
+            {/* Modal empresa */}
+            <Modal visible={modalCompany} animationType='fade' transparent={true}>
+                <View style={styles.modalContainer}>
+                    <View style={styles.modalContainerView}>
+                        <Image source={office} style={styles.modalImg}/>
+                        <Text style={styles.modalText}>Do non duis excepteur sunt mollit eu tempor eu id velit laboris. Nisi commodo amet exercitation ullamco culpa veniam enim. Exercitation dolor dolore amet voluptate ea reprehenderit non. Ipsum velit amet in tempor sunt.</Text>
+                        <TouchableOpacity style={styles.modalContainerClose} onPress={() => {
+                            setModalCompany(!modalCompany)
+                        }}><Text>X</Text></TouchableOpacity>
+                        
+                    </View>
+                </View>
+            </Modal>
+            {/* Modal hogar */}
+            <Modal visible={modalHome} animationType='fade' transparent={true}>
+                <View style={styles.modalContainer}>
+                    <View style={styles.modalContainerView}>
+                        <Image source={home} style={styles.modalImg}/>
+                        <Text style={styles.modalText}>Ut reprehenderit non elit in do et. Ea ex excepteur nisi nostrud id nostrud commodo sit ex voluptate veniam. Dolor nisi anim proident consectetur mollit amet consequat culpa sunt quis esse dolor. Voluptate esse id ullamco officia voluptate ullamco est qui magna. Deserunt pariatur sit cillum non et pariatur labore ex enim est duis dolore.</Text>
+                        <TouchableOpacity style={styles.modalContainerClose} onPress={() => {
+                            setModalHome(!modalHome)
+                        }}><Text>X</Text></TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
             <ScrollView>
                 <Header />
                 <Animated.View style={[styles.containerMain, {opacity: fadeAnim}]}>
@@ -57,15 +107,15 @@ export default function Home() {
                 <Animated.View style={[styles.containerMid, {opacity: fadeAnim}]}>
                     <Text style={styles.sectionTitle}>Aplicaciones Reales</Text>
                     <View style={styles.appContainer}>
-                        <TouchableOpacity style={styles.containerApp} activeOpacity={0.7}>
+                        <TouchableOpacity style={styles.containerApp} activeOpacity={0.7} onPress={onPressFactoryModal}>
                             <MaterialIcons name={"factory"} size={32} color="#6A0DAD"/>
                             <Text style={styles.cardTitle}>Industria</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.containerApp} activeOpacity={0.7}>
+                        <TouchableOpacity style={styles.containerApp} activeOpacity={0.7} onPress={onPressApartmentModal}>
                             <MaterialIcons name={"apartment"} size={32} color="#6A0DAD"/>
                             <Text style={styles.cardTitle}>Empresa</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.containerApp} activeOpacity={0.7}>
+                        <TouchableOpacity style={styles.containerApp} activeOpacity={0.7} onPress={onPressHomeModal}>
                             <MaterialIcons name={"home"} size={32} color="#6A0DAD"/>
                             <Text style={styles.cardTitle}>Hogar</Text>
                         </TouchableOpacity>
@@ -202,5 +252,41 @@ const styles = StyleSheet.create({
         maxWidth: 300,
         fontStyle: 'italic',
     },
+    modalContainer:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(68, 83, 91, 0.5)', 
+    },
+    modalContainerView:{
+        margin: 20,
+        backgroundColor: 'white',
+        borderRadius: 20,
+        padding: 25,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#5c5c5c',
+        shadowColor: 'rgb(113, 97, 132)',
+        shadowRadius: 6,
+    },
+    modalContainerClose:{
+        alignSelf: 'center',
+        borderRadius: 10,
+        paddingHorizontal: 15,
+        paddingVertical: 6,
+        marginTop: 20,
+        backgroundColor: 'rgb(129, 31, 31)',
+    },
+    modalText:{
+        flexWrap: 'wrap',
+        fontSize: 15,
+        fontWeight: '100',
+        maxWidth: 420,
+        textAlign: 'justify',
+    },
+    modalImg:{
+        width: 330,
+        height: 320,
+        resizeMode: 'contain',
+    }
 });
-
