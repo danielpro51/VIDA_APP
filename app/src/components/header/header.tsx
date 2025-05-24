@@ -7,7 +7,15 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
-
+import {
+    Gesture
+} from 'react-native-gesture-handler';
+import {
+    Easing,
+    interpolateColor,
+    useAnimatedStyle,
+    useSharedValue
+} from 'react-native-reanimated';
 export { RootStackParams } from "@/app/types";
 
 const logo = require('@/assets/images/logo.jpg');
@@ -16,16 +24,32 @@ type HomeScreen = NativeStackNavigationProp<RootStackParams, 'Home'>;
 type OurScreen = NativeStackNavigationProp<RootStackParams, 'Nosotros'>;
 type ProductsScreen = NativeStackNavigationProp<RootStackParams, 'Productos'>;
 
+const EASING = Easing.bezier(1, -1, 0, 0.3);
+
 export default function Header(){
     const { navigate } = useNavigation<HomeScreen>();
+    const translateX = useSharedValue(0);
+    const hover = Gesture.Hover()
+        .onStart((event) => {
+
+        })
+        .onUpdate((event) => {
+
+        })
+        .onEnd(() => {
+
+        });
+        const bottonAnimatedStyle = useAnimatedStyle(() => ({
+            backgroundColor: interpolateColor(
+                1,
+                [0, 1],
+                ["#000", "#fff"],
+            )
+        }));
     return (
         <View style={styles.container}>
             <View style={styles.containerLogo}>
-                {/* <Image
-                    source={logo}
-                    style={{ width: 50, height: 50 }}
-                    resizeMode="contain"
-                /> */}
+                
                 <TouchableOpacity onPress={() => {
                     navigate('Home');
                 }}>
