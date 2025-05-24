@@ -14,7 +14,6 @@ export default function Footer(){
 
 const styles = StyleSheet.create({
     containerFooter:{
-
     },
     footerText: {
         textAlign: 'center',
