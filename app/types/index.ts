@@ -3,4 +3,7 @@ export type RootStackParams = {
     Nosotros: undefined;
     Productos: undefined;
     Soporte: undefined;
+    Luces: undefined;
+    Automatizacion: undefined;
+    Seguridad: undefined;
 };

@@ -1,3 +1,4 @@
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import {
     StyleSheet,
     Text,
@@ -6,13 +7,13 @@ import {
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import Automatizacion from '../../(tabs)/automatizacion';
-import Seguridad from '../../(tabs)/seguridad';
+import { RootStackParams } from '@/app/types';
+import { useNavigation } from '@react-navigation/native';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
-
-
+type Auto = NativeStackNavigationProp<RootStackParams, 'Automatizacion'>;
 export default function Productos() {
+    const { navigate } = useNavigation<Auto>();
     return (
         <>
             <ScrollView>
@@ -32,7 +33,7 @@ export default function Productos() {
                         <View style={styles.card}>
                             <Text style={styles.cardTitle}>Luces</Text>
                             <Text style={styles.cardContent}>Ex laborum sint proident sit ut pariatur.</Text>
-                            <TouchableOpacity style={styles.cardBtn} onPress={() => (window.location.href='../../(tabs)/luces')}>
+                            <TouchableOpacity style={styles.cardBtn} onPress={() => {navigate('Luces')}}>
                                 <Text style={styles.cardBtnText}>Ver categoría</Text>
                             </TouchableOpacity>
                         </View>
@@ -41,7 +42,7 @@ export default function Productos() {
                         <View style={styles.card}>
                             <Text style={styles.cardTitle}>Automatización</Text>
                             <Text style={styles.cardContent}>Ex laborum sint proident sit ut pariatur.</Text>
-                            <TouchableOpacity style={styles.cardBtn} onPress={() => (window.location.href=`${Automatizacion}`)}>
+                            <TouchableOpacity style={styles.cardBtn} onPress={() => {navigate('Automatizacion')}}>
                                 <Text style={styles.cardBtnText}>Ver categoría</Text>
                             </TouchableOpacity>
                         </View>
@@ -50,7 +51,7 @@ export default function Productos() {
                         <View style={styles.card}>
                             <Text style={styles.cardTitle}>Seguridad</Text>
                             <Text style={styles.cardContent}>Ex laborum sint proident sit ut pariatur.</Text>
-                            <TouchableOpacity style={styles.cardBtn} onPress={() => (window.location.href=`${Seguridad}`)}>
+                            <TouchableOpacity style={styles.cardBtn} onPress={() => {navigate('Seguridad')}}>
                                 <Text style={styles.cardBtnText}>Ver categoría</Text>
                             </TouchableOpacity>
                         </View>
