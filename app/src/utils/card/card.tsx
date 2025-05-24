@@ -1,19 +1,18 @@
 import React, { useRef } from 'react';
-import { Animated, StyleSheet, View } from 'react-native';
-import Card from '../../utils/card';
-import Footer from '../../utils/footer';
-import Header from '../../utils/header';
+import { Animated, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+type props = {
+    title: string,
+    content: string,
+};
 
-export default function Luces() {
+const whatsappNumber = "3138862862";
+const message = "Hola, estoy aquí en compra del kit ";
+const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
+export default function Card({title, content}: props) {
     // Crear animaciones individuales para cada tarjeta
     const buttonOpacity1 = useRef(new Animated.Value(0)).current;
     const buttonTranslateY1 = useRef(new Animated.Value(30)).current;
-    
-    const buttonOpacity2 = useRef(new Animated.Value(0)).current;
-    const buttonTranslateY2 = useRef(new Animated.Value(30)).current;
-    
-    const buttonOpacity3 = useRef(new Animated.Value(0)).current;
-    const buttonTranslateY3 = useRef(new Animated.Value(30)).current;
 
     const handleHover = (hover, opacity, translateY) => {
         Animated.timing(opacity, {
@@ -31,16 +30,21 @@ export default function Luces() {
 
     return (
         <>
-            <Header />
             <View style={styles.cardWrapper}>
-                {/* Card 1 */}
-                <Card title='VIDA Lux 75X' content='Iluminación con control por voz y regulación automática.' />
-                {/* Card 2 */}
-                <Card title='VIDA Sentinel 45C' content='Sistema de seguridad con detección de movimiento y alertas.'/>
-                {/* Card 3 */}
-                <Card title='VIDA Omni 10T' content='Automatización completa con integración IoT avanzada.'/>
+                <View
+                    style={styles.cardContainer}
+                    onMouseEnter={() => handleHover(true, buttonOpacity1, buttonTranslateY1)}
+                    onMouseLeave={() => handleHover(false, buttonOpacity1, buttonTranslateY1)}
+                >
+                    <Text style={styles.cardTitle}>{title}</Text>
+                    <Text style={styles.cardContent}>{content}</Text>
+                    <Animated.View style={[styles.cardBtn, { opacity: buttonOpacity1, transform: [{ translateY: buttonTranslateY1 }] }]}>
+                        <TouchableOpacity onPress={() => {Linking.openURL(`${whatsappLink}?text=${encodeURIComponent(message)}${title}`)}}>
+                            <Text style={styles.cardBtnText}>Comprar</Text>
+                        </TouchableOpacity>
+                    </Animated.View>
+                </View>
             </View>
-            <Footer />
         </>
     );
 }

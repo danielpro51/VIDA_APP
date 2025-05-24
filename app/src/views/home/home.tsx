@@ -11,8 +11,8 @@ import {
     View
 } from 'react-native';
 
-import Footer from '../../components/footer';
-import Header from '../../components/header';
+import Footer from '../../utils/footer';
+import Header from '../../utils/header';
 
 const logo = require('@/assets/images/logo.jpg');
 const factory = require('@/assets/images/factory.png');

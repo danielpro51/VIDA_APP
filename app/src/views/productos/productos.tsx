@@ -9,8 +9,8 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import { RootStackParams } from '@/app/types';
 import { useNavigation } from '@react-navigation/native';
-import Footer from '../../components/footer';
-import Header from '../../components/header';
+import Footer from '../../utils/footer';
+import Header from '../../utils/header';
 type Auto = NativeStackNavigationProp<RootStackParams, 'Automatizacion'>;
 export default function Productos() {
     const { navigate } = useNavigation<Auto>();

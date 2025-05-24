@@ -3,8 +3,8 @@ import {
     View,
 } from 'react-native';
 
-import Footer from '../../components/footer';
-import Header from '../../components/header';
+import Footer from '../../utils/footer';
+import Header from '../../utils/header';
 
 export default function Soporte() {
     return (
