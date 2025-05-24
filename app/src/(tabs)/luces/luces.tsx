@@ -1,16 +1,16 @@
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import { ViewColors } from '@/constants/Colors';
 import Card from '../../utils/card';
 import Footer from '../../utils/footer';
 import Header from '../../utils/header';
-
 const relax1 = require("../../../../assets/images/momentrelax.png");
 const relax2 = require("../../../../assets/images/relaxing.png");
 
 export default function Luces() {
     return (
-        <ScrollView style={{backgroundColor:'#EEE6F3'}}>
+        <ScrollView style={{backgroundColor:'#EEE6F3', alignContent: 'space-between'}}>
             <Header />
 
             {/* Sección de Introducción */}
@@ -44,17 +44,6 @@ export default function Luces() {
         </ScrollView>
     );
 }
-const colors = {
-    backgroundMain: '#F5FCFF',
-    primary: '#4B0082',
-    secondary: '#E396FF',
-    contrast: '#2C2C2C',
-    softBackground: '#EEE6F3',
-    shadow: 'rgba(75, 0, 130, 0.2)',
-    modalBackground: 'rgba(68, 83, 91, 0.5)',
-    modalBorder: '#5C5C5C',
-    modalButton: '#811F1F',
-};
 
 const styles = StyleSheet.create({
     infoContainer: {
@@ -65,12 +54,12 @@ const styles = StyleSheet.create({
         marginBottom: 16,
         marginHorizontal: 15,
         justifyContent: 'space-between',
-        backgroundColor: colors.softBackground,
+        backgroundColor: ViewColors.softBackground,
     },
     infoTitle: {
         fontSize: 22,
         fontWeight: 'bold',
-        color: colors.primary,
+        color: ViewColors.primary,
         marginVertical: 20,
     },
     infoContainerC:{
@@ -83,17 +72,17 @@ const styles = StyleSheet.create({
         fontSize: 14,
         flexWrap: 'wrap',
         borderLeftWidth: 2,
-        borderLeftColor: colors.primary,
+        borderLeftColor: ViewColors.primary,
         padding: 8,
         textAlign: 'justify',
-        color: colors.contrast,
+        color: ViewColors.contrast,
     },
     img:{
         width: 280,
         height: 280,
         marginHorizontal: 80,
         borderRadius: 10,
-        shadowColor: colors.shadow,
+        shadowColor: ViewColors.shadow,
         shadowOffset: { width: 4, height: 4 },
         shadowOpacity: 0.2,
         shadowRadius: 6,

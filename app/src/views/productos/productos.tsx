@@ -57,16 +57,6 @@ export default function Productos() {
                         </View>
                     </View>
                 </View>
-
-                {/* Lista de Beneficios */}
-                <View style={styles.benefitsContainer}>
-                    <Text style={styles.sectionTitle}>Beneficios de Nuestros Productos</Text>
-                    <View style={styles.benefitList}>
-                        {["Ahorro de energía", "Mayor confort", "Seguridad avanzada", "Integración inteligente"].map((benefit, index) => (
-                            <Text key={index} style={styles.benefitItem}>✅ {benefit}</Text>
-                        ))}
-                    </View>
-                </View>
                 <Footer />
             </ScrollView>
         </>
@@ -76,7 +66,6 @@ export default function Productos() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 16,
     },
@@ -131,18 +120,5 @@ const styles = StyleSheet.create({
         color: '#333',
         fontSize: 16,
         maxWidth: 300,
-    },
-    benefitsContainer: {
-        padding: 20,
-        alignItems: 'center',
-    },
-    benefitList: {
-        marginTop: 10,
-        alignItems: 'center',
-    },
-    benefitItem: {
-        fontSize: 16,
-        color: '#2c2c2c',
-        marginVertical: 4,
     },
 });

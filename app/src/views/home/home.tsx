@@ -11,6 +11,7 @@ import {
     View
 } from 'react-native';
 
+import { ViewColors } from '@/constants/Colors';
 import Footer from '../../utils/footer';
 import Header from '../../utils/header';
 
@@ -141,22 +142,10 @@ export default function Home() {
         </View>
     );
 }
-const colors = {
-    backgroundMain: '#F5FCFF',
-    primary: '#4B0082',
-    secondary: '#E396FF',
-    contrast: '#2C2C2C',
-    softBackground: '#EEE6F3',
-    shadow: 'rgba(75, 0, 130, 0.2)',
-    modalBackground: 'rgba(68, 83, 91, 0.5)',
-    modalBorder: '#5C5C5C',
-    modalButton: '#811F1F',
-};
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.backgroundMain,
+        backgroundColor: ViewColors.backgroundMain,
     },
     containerMain: {
         flexDirection: 'row',
@@ -177,7 +166,7 @@ const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 28,
         fontWeight: 'bold',
-        color: colors.primary,
+        color: ViewColors.primary,
         textAlign: 'center',
         marginVertical: 16,
         borderBottomWidth: 1,
@@ -196,10 +185,10 @@ const styles = StyleSheet.create({
     card: {
         width: 240,
         padding: 16,
-        backgroundColor: colors.secondary,
+        backgroundColor: ViewColors.secondary,
         borderRadius: 12,
         margin: 8,
-        shadowColor: colors.primary,
+        shadowColor: ViewColors.primary,
         shadowOpacity: 0.2,
         shadowRadius: 4,
         elevation: 4,
@@ -207,12 +196,12 @@ const styles = StyleSheet.create({
     cardTitle: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: colors.primary,
+        color: ViewColors.primary,
         marginBottom: 6,
     },
     cardContent: {
         fontSize: 14,
-        color: colors.contrast,
+        color: ViewColors.contrast,
         textAlign: 'justify',
     },
     appContainer: {
@@ -224,10 +213,10 @@ const styles = StyleSheet.create({
         width: 'auto',
         alignItems: 'center',
         padding: 12,
-        backgroundColor: colors.secondary,
+        backgroundColor: ViewColors.secondary,
         borderRadius: 12,
         margin: 8,
-        shadowColor: colors.primary,
+        shadowColor: ViewColors.primary,
         shadowOpacity: 0.2,
         shadowRadius: 4,
         elevation: 4,
@@ -240,10 +229,10 @@ const styles = StyleSheet.create({
     testimonialCard: {
         width: 250,
         padding: 16,
-        backgroundColor: colors.secondary,
+        backgroundColor: ViewColors.secondary,
         borderRadius: 12,
         margin: 8,
-        shadowColor: colors.primary,
+        shadowColor: ViewColors.primary,
         shadowOpacity: 0.2,
         shadowRadius: 4,
         elevation: 4,
@@ -251,13 +240,13 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 32,
         fontWeight: 'bold',
-        color: colors.primary,
+        color: ViewColors.primary,
         marginVertical: 12,
     },
     subtitle: {
         flexWrap: 'wrap',
         fontSize: 16,
-        color: colors.contrast,
+        color: ViewColors.contrast,
         textAlign: 'justify',
         marginBottom: 16,
         maxWidth: 300,
@@ -267,7 +256,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.modalBackground,
+        backgroundColor: ViewColors.modalBackground,
     },
     modalContainerView: {
         margin: 20,
@@ -276,8 +265,8 @@ const styles = StyleSheet.create({
         padding: 25,
         alignItems: 'center',
         borderWidth: 1,
-        borderColor: colors.modalBorder,
-        shadowColor: colors.shadow,
+        borderColor: ViewColors.modalBorder,
+        shadowColor: ViewColors.shadow,
         shadowRadius: 6,
     },
     modalContainerClose: {
@@ -286,7 +275,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 6,
         marginTop: 20,
-        backgroundColor: colors.modalButton,
+        backgroundColor: ViewColors.modalButton,
     },
     modalText: {
         flexWrap: 'wrap',

@@ -24,3 +24,14 @@ export const Colors = {
     tabIconSelected: tintColorDark,
   },
 };
+export const ViewColors = {
+  backgroundMain: '#f2f2f2',
+  primary: '#4B0082',
+  secondary: 'rgb(194, 156, 235)',
+  contrast: '#2C2C2C',
+  softBackground: '#EEE6F3',
+  shadow: 'rgba(75, 0, 130, 0.2)',
+  modalBackground: 'rgba(78, 68, 91, 0.5)',
+  modalBorder: '#5C5C5C',
+  modalButton: 'rgb(236, 89, 190)',
+};
