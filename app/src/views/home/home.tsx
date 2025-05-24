@@ -141,11 +141,22 @@ export default function Home() {
         </View>
     );
 }
+const colors = {
+    backgroundMain: '#F5FCFF',
+    primary: '#4B0082',
+    secondary: '#E396FF',
+    contrast: '#2C2C2C',
+    softBackground: '#EEE6F3',
+    shadow: 'rgba(75, 0, 130, 0.2)',
+    modalBackground: 'rgba(68, 83, 91, 0.5)',
+    modalBorder: '#5C5C5C',
+    modalButton: '#811F1F',
+};
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F5FCFF',
+        backgroundColor: colors.backgroundMain,
     },
     containerMain: {
         flexDirection: 'row',
@@ -166,7 +177,7 @@ const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 28,
         fontWeight: 'bold',
-        color: '#4B0082',
+        color: colors.primary,
         textAlign: 'center',
         marginVertical: 16,
         borderBottomWidth: 1,
@@ -185,23 +196,23 @@ const styles = StyleSheet.create({
     card: {
         width: 240,
         padding: 16,
-        backgroundColor: '#e396ff',
+        backgroundColor: colors.secondary,
         borderRadius: 12,
         margin: 8,
-        shadowColor: '#000',
+        shadowColor: colors.primary,
         shadowOpacity: 0.2,
         shadowRadius: 4,
-        elevation: 4, // Sombra en Android
+        elevation: 4,
     },
     cardTitle: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#4B0082',
+        color: colors.primary,
         marginBottom: 6,
     },
     cardContent: {
         fontSize: 14,
-        color: '#2c2c2c',
+        color: colors.contrast,
         textAlign: 'justify',
     },
     appContainer: {
@@ -213,10 +224,10 @@ const styles = StyleSheet.create({
         width: 'auto',
         alignItems: 'center',
         padding: 12,
-        backgroundColor: '#e396ff',
+        backgroundColor: colors.secondary,
         borderRadius: 12,
         margin: 8,
-        shadowColor: '#000',
+        shadowColor: colors.primary,
         shadowOpacity: 0.2,
         shadowRadius: 4,
         elevation: 4,
@@ -229,64 +240,64 @@ const styles = StyleSheet.create({
     testimonialCard: {
         width: 250,
         padding: 16,
-        backgroundColor: '#e396ff',
+        backgroundColor: colors.secondary,
         borderRadius: 12,
         margin: 8,
-        shadowColor: '#000',
+        shadowColor: colors.primary,
         shadowOpacity: 0.2,
         shadowRadius: 4,
         elevation: 4,
     },
-    title:{
+    title: {
         fontSize: 32,
         fontWeight: 'bold',
-        color: '#4B0082',
+        color: colors.primary,
         marginVertical: 12,
     },
-    subtitle:{
+    subtitle: {
         flexWrap: 'wrap',
         fontSize: 16,
-        color: '#2c2c2c',
+        color: colors.contrast,
         textAlign: 'justify',
         marginBottom: 16,
         maxWidth: 300,
         fontStyle: 'italic',
     },
-    modalContainer:{
+    modalContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgba(68, 83, 91, 0.5)', 
+        backgroundColor: colors.modalBackground,
     },
-    modalContainerView:{
+    modalContainerView: {
         margin: 20,
         backgroundColor: 'white',
         borderRadius: 20,
         padding: 25,
         alignItems: 'center',
         borderWidth: 1,
-        borderColor: '#5c5c5c',
-        shadowColor: 'rgb(113, 97, 132)',
+        borderColor: colors.modalBorder,
+        shadowColor: colors.shadow,
         shadowRadius: 6,
     },
-    modalContainerClose:{
+    modalContainerClose: {
         alignSelf: 'center',
         borderRadius: 10,
         paddingHorizontal: 15,
         paddingVertical: 6,
         marginTop: 20,
-        backgroundColor: 'rgb(129, 31, 31)',
+        backgroundColor: colors.modalButton,
     },
-    modalText:{
+    modalText: {
         flexWrap: 'wrap',
         fontSize: 15,
         fontWeight: '100',
         maxWidth: 420,
         textAlign: 'justify',
     },
-    modalImg:{
+    modalImg: {
         width: 330,
         height: 320,
         resizeMode: 'contain',
-    }
+    },
 });
