@@ -1,62 +1,84 @@
-import React from 'react';
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+import { RootStackParams } from '@/app/types';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import Carousel from "pinar";
+import React, { useEffect, useRef } from "react";
+import { Animated, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const { width } = Dimensions.get('window');
+export { RootStackParams } from "@/app/types";
+type HomeScreen = NativeStackNavigationProp<RootStackParams, 'Home'>;
 
-const items = [
-    { title: "VIDA Flux Core", text: "El centro neurálgico de la automatización.", img: require('@/assets/images/alert.png') },
-    { title: "VIDA Flux Pulse", text: "Respuesta intuitiva en tiempo real.", img: require('@/assets/images/alert.png') },
-    { title: "VIDA Flux Nexus", text: "Conectividad fluida entre dispositivos.", img: require('@/assets/images/alert.png') },
-];
+export default function Nosotros(){
+    const { navigate } = useNavigation<HomeScreen>();
 
-const renderItem = ({ item }: { item: any }) => (
-    <View style={styles.card}>
-        <Image source={item.img} style={styles.img} />
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.text}>{item.text}</Text>
-    </View>
-);
+    // Animación de Fade-in
+    const fadeAnim = useRef(new Animated.Value(0)).current;
 
-export default function Carrusel() {
+    useEffect(() => {
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 1200, // Duración en ms
+            useNativeDriver: true,
+        }).start();
+    }, []);
+
     return (
-        <Carousel
-            data={items}
-            renderItem={renderItem}
-            sliderWidth={width}
-            itemWidth={width * 0.8}
-            loop={true}
-            autoplay={true}
-        />
+        <Animated.View style={{ opacity: fadeAnim }}>
+            <Carousel 
+                loop={false}
+                showsControls={false}
+                showsDots={false}
+                automaticallyAdjustContentInsets={true}
+            >
+                <View style={[styles.slide, styles.slide1]}>
+                    <Text style={styles.text}>VIDA es más que automatización. Es la apertura a una revolución. La Revolución Automática.</Text>
+                </View>
+                <View style={[styles.slide, styles.slide2]}>
+                    <Text style={styles.text}>En VIDA, creamos ecosistemas donde tecnología y estética se fusionan.</Text>
+                </View>
+                <View style={[styles.slide, styles.slide3]}>
+                    <Text style={styles.text}>Cada espacio responde de manera adaptativa y dinámica según el ambiente.</Text>
+                </View>
+                <View style={[styles.slide, styles.slide4]}>
+                    <Text style={styles.text}>VIDA redefine la automatización con precisión y diseño impecable.</Text>
+                </View>
+                <View style={[styles.slide, styles.slide5]}>
+                    <Text style={styles.text}>Bienvenido a la sincronía perfecta entre usuario y entorno.</Text>
+                    <TouchableOpacity onPress={() => {
+                        navigate('Home');
+                    }} style={styles.btn}>
+                        <Text style={styles.text}>Inicio</Text>
+                    </TouchableOpacity>
+                </View>
+            </Carousel>
+        </Animated.View>
     );
-}
+};
 
 const styles = StyleSheet.create({
-    card: {
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
-        borderRadius: 16,
-        padding: 20,
-        alignItems: 'center',
-        shadowColor: 'rgba(0,0,0,0.2)',
-        shadowOpacity: 0.4,
-        shadowRadius: 6,
-    },
-    img: {
-        width: 200,
-        height: 200,
-        borderRadius: 12,
-        marginBottom: 12,
-    },
-    title: {
-        fontSize: 22,
-        fontWeight: 'bold',
-        color: '#4B0082',
-        marginBottom: 8,
-    },
-    text: {
-        fontSize: 16,
-        color: '#2C2C2C',
-        textAlign: 'center',
-        maxWidth: 250,
-    },
+  slide: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 40,
+  },
+  slide1: { backgroundColor: "#000000" },
+  slide2: { backgroundColor: "#1A1A1A" },
+  slide3: { backgroundColor: "#333333" },
+  slide4: { backgroundColor: "#4B0082" },
+  slide5: { backgroundColor: "rgb(194, 156, 235)" },
+  text: {
+    color: "#FFFFFF",
+    fontSize: 22,
+    fontWeight: "bold",
+    textAlign: "center",
+    maxWidth: 500,
+    lineHeight: 30,
+  },
+  btn:{
+    marginVertical: 20,
+    padding: 8,
+    borderRadius: 10,
+    backgroundColor: 'rgba(86, 68, 91, 0.5)',
+  }
 });
