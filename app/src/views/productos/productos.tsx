@@ -21,10 +21,11 @@ export default function Productos() {
     useEffect(() => {
         Animated.timing(fadeAnim, {
             toValue: 1,
-            duration: 500,
+            duration: 250,
             useNativeDriver: true,
         }).start();
     }, []);
+
     return (
         <Animated.View style={{opacity: fadeAnim, backgroundColor: '#EEE6F3', flex:1}}>
             <ScrollView>
@@ -91,6 +92,11 @@ const styles = StyleSheet.create({
         margin: 20,
         alignItems: 'center',
         borderRadius: 12,
+        shadowColor: '#5e2b96',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 1,
+        shadowRadius: 8,
+        boxShadow: 'inset -25px 25px 50px #803acc',
     },
     cardTitle: {
         fontSize: 20,

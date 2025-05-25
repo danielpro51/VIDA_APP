@@ -10,7 +10,6 @@ const message = "Hola, estoy aquí en compra del kit ";
 const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
 export default function Card({title, content}: props) {
-    // Crear animaciones individuales para cada tarjeta
     const buttonOpacity1 = useRef(new Animated.Value(0)).current;
     const buttonTranslateY1 = useRef(new Animated.Value(30)).current;
 
