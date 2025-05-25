@@ -11,13 +11,12 @@ type HomeScreen = NativeStackNavigationProp<RootStackParams, 'Home'>;
 export default function Nosotros(){
     const { navigate } = useNavigation<HomeScreen>();
 
-    // Animación de Fade-in
     const fadeAnim = useRef(new Animated.Value(0)).current;
 
     useEffect(() => {
         Animated.timing(fadeAnim, {
             toValue: 1,
-            duration: 1200, // Duración en ms
+            duration: 1200,
             useNativeDriver: true,
         }).start();
     }, []);
@@ -62,11 +61,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 40,
   },
-  slide1: { backgroundColor: "#000000" },
-  slide2: { backgroundColor: "#1A1A1A" },
-  slide3: { backgroundColor: "#333333" },
-  slide4: { backgroundColor: "#4B0082" },
-  slide5: { backgroundColor: "rgb(194, 156, 235)" },
+  slide1: { backgroundColor: "rgb(7, 0, 15)" },
+  slide2: { backgroundColor: "rgb(44, 16, 75)" },
+  slide3: { backgroundColor: "rgb(69, 43, 95)" },
+  slide4: { backgroundColor: "rgb(109, 74, 147)" },
+  slide5: { backgroundColor: "rgb(144, 113, 177)" },
   text: {
     color: "#FFFFFF",
     fontSize: 22,

@@ -1,5 +1,6 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import {
+    Animated,
     StyleSheet,
     Text,
     TouchableOpacity,
@@ -9,14 +10,24 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import { RootStackParams } from '@/app/types';
 import { useNavigation } from '@react-navigation/native';
+import { useEffect, useRef } from 'react';
 import Footer from '../../utils/footer';
 import Header from '../../utils/header';
 type Auto = NativeStackNavigationProp<RootStackParams, 'Automatizacion'>;
 export default function Productos() {
     const { navigate } = useNavigation<Auto>();
+    const fadeAnim = useRef(new Animated.Value(0)).current;
+
+    useEffect(() => {
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 500,
+            useNativeDriver: true,
+        }).start();
+    }, []);
     return (
-        <>
-            <ScrollView style={{backgroundColor: '#EEE6F3'}}>
+        <Animated.View style={{opacity: fadeAnim, backgroundColor: '#EEE6F3', flex:1}}>
+            <ScrollView>
                 <Header />
                 {/* Descripción General */}
                 <View style={styles.introContainer}>
@@ -57,9 +68,9 @@ export default function Productos() {
                         </View>
                     </View>
                 </View>
-                <Footer />
             </ScrollView>
-        </>
+            <Footer />
+        </Animated.View>
     );
 }
 
@@ -75,7 +86,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     card: {
-        backgroundColor: '#4B0082',
+        backgroundColor: 'rgb(111, 50, 177)',
         padding: 12,
         margin: 20,
         alignItems: 'center',
@@ -92,12 +103,12 @@ const styles = StyleSheet.create({
         maxWidth: 170,
         padding: 12,
         fontSize: 14,
-        color: '#d9d9d9',
+        color: 'rgb(255, 255, 255)',
     },
     cardBtn: {
         paddingVertical: 6,
         paddingHorizontal: 16,
-        backgroundColor: '#6A0DAD',
+        backgroundColor: 'rgb(146, 58, 240)',
         borderRadius: 8,
     },
     cardBtnText: {

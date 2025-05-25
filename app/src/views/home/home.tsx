@@ -50,7 +50,8 @@ export default function Home() {
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContainerView}>
                         <Image source={factory} style={styles.modalImg}/>
-                        <Text style={styles.modalText}>Eu commodo laboris dolor commodo ut amet sunt. Dolor anim esse irure reprehenderit. Ad dolore elit occaecat incididunt ut esse tempor veniam ea ipsum. Do culpa aliqua eu fugiat enim pariatur minim.</Text>
+                        <Text style={styles.modalText}>En la industria moderna, VIDA ofrece integración IoT avanzada para optimizar procesos, mejorar la eficiencia y reducir costos operativos.  
+                Desde sistemas de control automatizado hasta monitoreo en tiempo real, VIDA Lux redefine la producción con automatización intuitiva.</Text>
                         <TouchableOpacity style={styles.modalContainerClose} onPress={() => {
                             setModalIndustry(!modalIndustry)
                         }}><Text>X</Text></TouchableOpacity>
@@ -62,7 +63,8 @@ export default function Home() {
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContainerView}>
                         <Image source={office} style={styles.modalImg}/>
-                        <Text style={styles.modalText}>Do non duis excepteur sunt mollit eu tempor eu id velit laboris. Nisi commodo amet exercitation ullamco culpa veniam enim. Exercitation dolor dolore amet voluptate ea reprehenderit non. Ipsum velit amet in tempor sunt.</Text>
+                        <Text style={styles.modalText}>VIDA revoluciona la gestión empresarial, permitiendo espacios inteligentes que optimizan seguridad, iluminación y comunicación interna.  
+                Oficinas con automatización personalizada, control remoto y tecnología de adaptación crean entornos dinámicos y altamente productivos.</Text>
                         <TouchableOpacity style={styles.modalContainerClose} onPress={() => {
                             setModalCompany(!modalCompany)
                         }}><Text>X</Text></TouchableOpacity>
@@ -75,7 +77,9 @@ export default function Home() {
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContainerView}>
                         <Image source={home} style={styles.modalImg}/>
-                        <Text style={styles.modalText}>Ut reprehenderit non elit in do et. Ea ex excepteur nisi nostrud id nostrud commodo sit ex voluptate veniam. Dolor nisi anim proident consectetur mollit amet consequat culpa sunt quis esse dolor. Voluptate esse id ullamco officia voluptate ullamco est qui magna. Deserunt pariatur sit cillum non et pariatur labore ex enim est duis dolore.</Text>
+                        <Text style={styles.modalText}>En casa, la tecnología de VIDA transforma el hogar en un espacio inteligente y armonioso.  
+                Control total de iluminación, seguridad avanzada, y asistentes automatizados que responden a la rutina diaria.  
+                Con VIDA Lux, cada acción fluye con precisión y comodidad.</Text>
                         <TouchableOpacity style={styles.modalContainerClose} onPress={() => {
                             setModalHome(!modalHome)
                         }}><Text>X</Text></TouchableOpacity>
@@ -87,7 +91,7 @@ export default function Home() {
                 <Animated.View style={[styles.containerMain, {opacity: fadeAnim}]}>
                     <View style={{justifyContent: 'center', alignItems: 'center' }}>
                         <Text style={styles.title}>VIDA</Text>
-                        <Text style={styles.subtitle}>Laboris sunt aute mollit duis tempor sit pariatur ipsum nisi amet eu...</Text>
+                        <Text style={styles.subtitle}>En un mundo cada vez más acelerado, la verdadera innovación está en aquello que nos permite detenermos y vivir mejor.</Text>
                     </View>
                     <Image source={logo} style={styles.imgLogo} />
                 </Animated.View>
@@ -96,10 +100,15 @@ export default function Home() {
                 <Animated.View style={[styles.containerMid, {opacity: fadeAnim}]}>
                     <Text style={styles.sectionTitle}>Características</Text>
                     <View style={styles.characteristicsContainer}>
-                        {["Automatización", "Seguridad", "Confort", "Eficiencia Energética"].map((item, index) => (
+                        {[
+                            { title: "Automatización", content: "Sistemas que responden intuitivamente a cada necesidad, adaptándose al usuario." },
+                            { title: "Seguridad", content: "Protección avanzada con monitoreo inteligente y respuestas automáticas." },
+                            { title: "Confort", content: "Experiencia fluida donde la tecnología mejora el bienestar sin esfuerzo." },
+                            { title: "Eficiencia Energética", content: "Reducción del consumo sin afectar la comodidad del usuario." }
+                        ].map((item, index) => (
                             <View key={index} style={styles.card}>
-                                <Text style={styles.cardTitle}>{item}</Text>
-                                <Text style={styles.cardContent}>Descripción breve de esta característica clave.</Text>
+                                <Text style={styles.cardTitle}>{item.title}</Text>
+                                <Text style={styles.cardContent}>{item.content}</Text>
                             </View>
                         ))}
                     </View>
@@ -127,10 +136,14 @@ export default function Home() {
                 <Animated.View style={[styles.containerMid, {opacity: fadeAnim}]}>
                     <Text style={styles.sectionTitle}>Testimonios</Text>
                     <View style={styles.testimonialsContainer}>
-                        {["Juan Pérez", "María Rodríguez", "Carlos Gómez"].map((user, index) => (
+                        {[
+                            { user: "Juan Pérez", content: "VIDA transformó mi hogar en un espacio inteligente y adaptativo." },
+                            { user: "María Rodríguez", content: "Gracias a VIDA, mi empresa es más eficiente y segura." },
+                            { user: "Carlos Gómez", content: "Nunca imaginé que la automatización pudiera ser tan intuitiva." }
+                        ].map((testimonio, index) => (
                             <View key={index} style={styles.testimonialCard}>
-                                <Text style={styles.cardTitle}>{user}</Text>
-                                <Text style={styles.cardContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+                                <Text style={styles.cardTitle}>{testimonio.user}</Text>
+                                <Text style={styles.cardContent}>{testimonio.content}</Text>
                             </View>
                         ))}
                     </View>
