@@ -6,7 +6,7 @@ type props = {
 };
 
 const whatsappNumber = "3138862862";
-const message = "Hola, estoy aquí en compra del kit ";
+const message = "Hola, estoy aquí para consultar el precio del kit ";
 const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
 export default function Card({title, content}: props) {
