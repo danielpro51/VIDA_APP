@@ -44,7 +44,9 @@ export default function Productos() {
                         {/* Producto: Luces */}
                         <View style={styles.card}>
                             <Text style={styles.cardTitle}>Luces</Text>
-                            <Text style={styles.cardContent}>Ex laborum sint proident sit ut pariatur.</Text>
+                            <Text style={styles.cardContent}>
+                                Iluminación inteligente que se adapta a tus necesidades, optimizando confort y eficiencia.
+                            </Text>
                             <TouchableOpacity style={styles.cardBtn} onPress={() => {navigate('Luces')}}>
                                 <Text style={styles.cardBtnText}>Ver categoría</Text>
                             </TouchableOpacity>
@@ -53,7 +55,9 @@ export default function Productos() {
                         {/* Producto: Automatización */}
                         <View style={styles.card}>
                             <Text style={styles.cardTitle}>Automatización</Text>
-                            <Text style={styles.cardContent}>Ex laborum sint proident sit ut pariatur.</Text>
+                            <Text style={styles.cardContent}>
+                                Control total de tus espacios con tecnología avanzada, garantizando sincronización perfecta.
+                            </Text>
                             <TouchableOpacity style={styles.cardBtn} onPress={() => {navigate('Automatizacion')}}>
                                 <Text style={styles.cardBtnText}>Ver categoría</Text>
                             </TouchableOpacity>
@@ -62,7 +66,9 @@ export default function Productos() {
                         {/* Producto: Seguridad */}
                         <View style={styles.card}>
                             <Text style={styles.cardTitle}>Seguridad</Text>
-                            <Text style={styles.cardContent}>Ex laborum sint proident sit ut pariatur.</Text>
+                            <Text style={styles.cardContent}>
+                                Protección inteligente con monitoreo en tiempo real y respuestas automatizadas.
+                            </Text>
                             <TouchableOpacity style={styles.cardBtn} onPress={() => {navigate('Seguridad')}}>
                                 <Text style={styles.cardBtnText}>Ver categoría</Text>
                             </TouchableOpacity>
