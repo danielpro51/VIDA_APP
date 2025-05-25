@@ -145,7 +145,7 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: ViewColors.backgroundMain,
+        backgroundColor: '#EEE6F3',
     },
     containerMain: {
         flexDirection: 'row',

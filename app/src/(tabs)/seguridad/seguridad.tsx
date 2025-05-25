@@ -14,7 +14,7 @@ const ale = require("@/assets/images/alert.png");
 
 export default function Seguridad(){
     return(
-        <ScrollView>
+        <ScrollView style={{backgroundColor: '#EEE6F3'}}>
             <Header />
             <View style={styles.secuContainer}>
                 <Text style={styles.title}>VIDA Sentinel</Text>

@@ -16,7 +16,7 @@ export default function Productos() {
     const { navigate } = useNavigation<Auto>();
     return (
         <>
-            <ScrollView>
+            <ScrollView style={{backgroundColor: '#EEE6F3'}}>
                 <Header />
                 {/* Descripción General */}
                 <View style={styles.introContainer}>
