@@ -92,6 +92,6 @@ const styles = StyleSheet.create({
     button: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: 'rgb(133, 30, 206)',
+        color: '#4B0082',
     },
 });

@@ -8,7 +8,6 @@ import Seguridad from '../../(tabs)/seguridad';
 import HomeScreen from '../../views/home';
 import OurScreen from '../../views/nosotros';
 import ProductsScreen from '../../views/productos';
-import SupportScreen from '../../views/soporte';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +20,6 @@ export default function Routes() {
                     <Stack.Screen name='Home' component={HomeScreen}/>
                     <Stack.Screen name='Nosotros' component={OurScreen} />
                     <Stack.Screen name='Productos' component={ProductsScreen} />
-                    <Stack.Screen name='Soporte' component={SupportScreen} />
                     <Stack.Screen name='Automatizacion' component={Automatizacion} />
                     <Stack.Screen name='Luces' component={Luces} />
                     <Stack.Screen name='Seguridad' component={Seguridad} />
