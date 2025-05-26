@@ -1,3 +1,8 @@
+/**
+ * @file seguridad.tsx
+ * @description This file contains the Seguridad (Security) screen for the VIDA app.
+ * It showcases the VIDA Sentinel security solutions, including product descriptions and images.
+ */
 import { ViewColors } from '@/constants/Colors';
 import {
     Image,

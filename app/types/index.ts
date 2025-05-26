@@ -1,3 +1,6 @@
+/**
+ * @file Types for the application
+ */
 export type RootStackParams = {
     Home: undefined;
     Nosotros: undefined;

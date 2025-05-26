@@ -1,3 +1,12 @@
+/**
+ * @file Home.tsx
+ * @description This file contains the Home component, which is the main screen of the VIDA app.
+ * It includes a header, footer, and several sections showcasing the features, real applications, and testimonials of VIDA.
+ * It also includes modals for detailed information about different applications of VIDA in industry, companies, and homes.
+ * The component uses React Native's Animated API for fade-in effects and MaterialIcons for icons.
+ * It is styled using StyleSheet and includes images for logos and application examples.
+ * 
+ */
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import React, { useState } from 'react';
 import {

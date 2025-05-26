@@ -1,3 +1,8 @@
+/**
+ * @file luces.tsx
+ * @description This file contains the Luces (Lights) screen for the VIDA app.
+ * It provides an overview of the VIDA Lux product line, including a brief history of lighting technology and a list of available products.
+ */
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 

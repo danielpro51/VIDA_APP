@@ -1,3 +1,8 @@
+/**
+ * @file This file contains the Productos component, which displays a list of products with descriptions and navigation options.
+ * It uses React Navigation for navigation and Animated API for fade-in effect.
+ * It includes a header, footer, and a scrollable view for better user experience.
+ */
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import {
     Animated,

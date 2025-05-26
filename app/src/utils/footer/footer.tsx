@@ -1,3 +1,9 @@
+/**
+ * @file footer.tsx
+ * @description This file contains the Footer component for the VIDA app.
+ * It displays a copyright notice and a brief description of the company.
+ * * The footer is styled to be centered and uses a specific color scheme.
+ */
 import {
     StyleSheet,
     Text,

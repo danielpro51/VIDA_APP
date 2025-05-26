@@ -1,3 +1,9 @@
+/**
+ * @file header.tsx
+ * @description This file contains the Header component for the VIDA app.
+ * It includes navigation to Home, Nosotros, and Productos screens.
+ * It uses React Navigation for navigation and Reanimated for animations.
+ */
 import { RootStackParams } from '@/app/types';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';

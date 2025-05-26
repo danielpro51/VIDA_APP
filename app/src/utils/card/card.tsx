@@ -1,3 +1,15 @@
+/**
+ * @file card.tsx
+ * @description This file contains the Card component for displaying product information in the VIDA app.
+ * It includes a title, content, and a button that opens a WhatsApp link to inquire about the product price.
+ * It uses React Native's Animated API for hover effects and styles the card with a modern design.
+ * The card is designed to be responsive and visually appealing, with a focus on user interaction.
+ * * The card includes a hover effect that animates the button's opacity and position when the user hovers over it.
+ * * The button opens a WhatsApp link with a pre-filled message to inquire about the product price.
+ * * The card is styled with a modern design, including shadows, rounded corners, and a responsive layout.
+ * * The component is reusable and can be used to display different products by passing different props.
+ * @version 1.0.0
+ */
 import React, { useRef } from 'react';
 import { Animated, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 type props = {

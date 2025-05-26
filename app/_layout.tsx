@@ -1,3 +1,9 @@
+/**
+ * @file _layout.tsx
+ * @author danielpro51
+ * @description Main component
+ * 
+ */
 import React from 'react';
 import {
   StyleSheet,

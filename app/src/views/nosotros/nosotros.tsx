@@ -1,3 +1,9 @@
+/**
+ * @file This file contains the Nosotros component, which is part of the VIDA app.
+ * @description The component displays a series of slides that describe the VIDA philosophy and products.
+ * It uses a carousel for navigation between slides and includes a fade-in animation effect.
+ * It also includes a button to navigate back to the Home screen.
+ */
 import { RootStackParams } from '@/app/types';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';

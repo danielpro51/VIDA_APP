@@ -1,3 +1,8 @@
+/**
+ * @file automatizacion.tsx
+ * @description This file contains the Automatizacion (Automation) screen for the VIDA app.
+ * It showcases the VIDA Flux automation solutions, including product descriptions and images.
+ */
 import { ViewColors } from '@/constants/Colors';
 import {
     Image,
