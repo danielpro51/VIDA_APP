@@ -1,6 +1,5 @@
 /**
  * @file _layout.tsx
- * @author danielpro51
  * @description Main component
  * 
  */
